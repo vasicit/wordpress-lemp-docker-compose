@@ -1,0 +1,8 @@
+version: "3"
+services:
+  nginx-ps:
+    image: pagespeed/nginx-pagespeed:stable
+    container_name: nginx-ps
+    deploy:
+      replicas: 1
+    ports: 80:80
