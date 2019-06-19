@@ -5,4 +5,5 @@ services:
     container_name: nginx-ps
     deploy:
       replicas: 1
-    ports: 80:80
+    ports: 
+      - "80:80"
