@@ -20,4 +20,5 @@ services:
     container_name: wordpress
     deploy:
       replicas: 1
-    volumes: /var/www/html    
+    volumes: 
+      - type: volume    
