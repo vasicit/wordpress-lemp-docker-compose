@@ -16,7 +16,7 @@ services:
         target: /usr/share/nginx/html
   wordpress:
     image: wordpress:fpm-alpine
-    containter_name: wordpress
+    container_name: wordpress
     deploy:
       replicas: 1
     
