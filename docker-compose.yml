@@ -25,5 +25,4 @@ services:
         source: wp-data
         target: /var/www/html
 volumes:
-  wp-data:
-    external: true
+  wp-data: {}
