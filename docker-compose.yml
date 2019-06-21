@@ -3,8 +3,6 @@ services:
   nginx-ps:
     image: pagespeed/nginx-pagespeed:stable
     container_name: nginx-ps
-    deploy:
-      replicas: 1
     ports: 
       - "80:80"
     volumes:
@@ -18,8 +16,6 @@ services:
   wordpress:
     image: wordpress:fpm-alpine
     container_name: wordpress
-    deploy:
-      replicas: 1
     volumes: 
       - type: volume
         source: wp-data
