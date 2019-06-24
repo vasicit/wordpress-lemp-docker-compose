@@ -17,7 +17,7 @@ services:
     container_name: wordpress
     volumes: 
       - type: bind
-        source: ./app/php-fpm/conf/www.conf
+        source: ./app/wordpress/conf/www.conf
         target: /usr/local/etc/php-fpm.d/www.conf
       - type: volume
         source: wp-data
