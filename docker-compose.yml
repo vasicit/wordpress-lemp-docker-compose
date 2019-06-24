@@ -20,4 +20,4 @@ services:
         source: wp-data
         target: /var/www/html
 volumes:
-  wp-data:
+  wp-data:/var/www/html
