@@ -16,6 +16,9 @@ services:
     image: wordpress:fpm-alpine
     container_name: wordpress
     volumes: 
+      - type: bind
+        source: ./app/php-fpm/conf/www.conf
+        target: /usr/local/etc/php-fpm.d/www.conf
       - type: volume
         source: wp-data
         target: /var/www/html
