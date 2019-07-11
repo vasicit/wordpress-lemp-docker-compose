@@ -19,6 +19,10 @@ services:
     image: mariadb
     container_name: mariadb
     restart: "no"
+    volumes: 
+      - type: volume
+        source: mariadb-data
+        target: /var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "mdb#dpthchrg!"
       MYSQL_DATABASE: wordpress
@@ -47,4 +51,5 @@ volumes:
   wp-html:
   nginx-config:
   php-fpm-config:
+  mariadb-data:
   
