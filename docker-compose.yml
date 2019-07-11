@@ -5,7 +5,6 @@ services:
     container_name: nginx-ps
     restart: "no"
     depends_on: 
-      - mariadb
       - wordpress
     ports: 
       - "80:80"
