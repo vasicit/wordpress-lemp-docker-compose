@@ -3,7 +3,7 @@ services:
   nginx-ps:
     image: pagespeed/nginx-pagespeed:stable
     container_name: nginx-ps
-    restart: "no"
+    restart: always
     depends_on: 
       - wordpress
     ports: 
@@ -18,7 +18,7 @@ services:
   mariadb:
     image: mariadb
     container_name: mariadb
-    restart: "no"
+    restart: always
     volumes: 
       - type: volume
         source: mariadb-data
@@ -31,7 +31,7 @@ services:
   wordpress:
     image: wordpress:fpm-alpine
     container_name: wordpress
-    restart: "no"
+    restart: always
     depends_on: 
       - mariadb
     volumes: 
