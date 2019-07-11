@@ -1,6 +1,6 @@
 backend default {
        .host = nginx;
-       .port = “80”;
+       .port = 80;
 }
 
 #unsetting wordpress cookies
