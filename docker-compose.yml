@@ -47,6 +47,10 @@ services:
       WORDPRESS_DB_PASSWORD: "wp#dpthchrg!"
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DEBUG: "1"
+  redis:
+    image: redis
+    container_name: redis
+    restart: "no"
 volumes:
   wp-html:
   nginx-config:
