@@ -1,5 +1,5 @@
 backend default {
-       .host = “nginx”;
+       .host = nginx;
        .port = “80”;
 }
 
@@ -40,7 +40,7 @@ sub vcl_backend_response {
 }
 
 acl internal {
-  "nginx";
+  nginx;
 }
 # Allowing which address can access cron.php or install.php,
 # add the following in acl.
@@ -66,8 +66,7 @@ sub vcl_recv{
 }
 
 acl purge {
-  "nginx";
-  server ip address or hostname;
+  nginx;
 }
 
 ...
