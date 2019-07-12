@@ -68,7 +68,7 @@ services:
     container_name: redis
     restart: "no"
   cert-gen:
-    image: alpine:stable-alpine
+    image: alpine:latest
     container_name: cert-gen
     restart: "no"
     volumes:
