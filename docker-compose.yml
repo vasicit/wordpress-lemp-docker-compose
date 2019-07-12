@@ -71,10 +71,11 @@ services:
     image: alpine
     container_name: cert-gen
     restart: "no"
-    #volumes:
-    #  - type: volume
-    #    source: ssl-certs
-    #    target: /etc/ssl/private
+    entrypoint: ["tail", "-f", "/dev/null"]
+    volumes:
+      - type: volume
+        source: ssl-certs
+        target: /etc/ssl/private
 volumes:
   wp-html:
   nginx-config:
