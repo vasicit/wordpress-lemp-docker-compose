@@ -13,9 +13,9 @@ services:
       - type: bind
         source: ./proxy.conf
         target: /etc/nginx/conf.d/default.conf
-      #- type: volume
-      #  source: ssl-certs
-      #  target: /etc/ssl
+      - type: volume
+        source: ssl-certs
+        target: /etc/ssl
   nginx-ps:
     image: pagespeed/nginx-pagespeed:stable
     container_name: nginx-ps
@@ -67,6 +67,14 @@ services:
     image: redis:alpine
     container_name: redis
     restart: "no"
+  cert-gen:
+    image: alpine:stable-alpine
+    container_name: cert-gen
+    restart: "no"
+    volumes:
+      - type: volume
+        source: ssl-certs
+        target: /etc/ssl
 volumes:
   wp-html:
   nginx-config:
