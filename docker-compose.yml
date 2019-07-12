@@ -12,7 +12,7 @@ services:
     volumes:
       - type: bind
         source: ./proxy.conf
-        target: /etc/nginx/nginx.conf
+        target: /etc/nginx/conf.d/default.conf
   nginx-ps:
     image: pagespeed/nginx-pagespeed:stable
     container_name: nginx-ps
