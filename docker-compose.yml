@@ -1,17 +1,5 @@
 version: "3.7"
 services:
-  varnish:
-    image: varnish
-    container_name: varnish
-    restart: "no"
-    depends_on: 
-      - nginx-ps
-    ports: 
-      - "80:80"
-    volumes: 
-      - type: bind
-        source: ./default.vcl
-        target: /etc/varnish/default.vcl
   nginx-ps:
     image: pagespeed/nginx-pagespeed:stable
     container_name: nginx-ps
