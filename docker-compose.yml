@@ -68,10 +68,10 @@ services:
     container_name: redis
     restart: "no"
   cert-gen:
-    image: alpine
+    image: alpine:latest
     container_name: cert-gen
     restart: "no"
-    entrypoint: ["tail", "-f", "/dev/null"]
+    command: bash -c "tail -f /dev/null"
     volumes:
       - type: volume
         source: ssl-certs
