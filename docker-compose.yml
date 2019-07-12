@@ -4,6 +4,8 @@ services:
     image: varnish
     container_name: varnish
     restart: "no"
+    depends_on: 
+      - nginx-ps
     ports: 
       - "80:80"
     volumes: 
