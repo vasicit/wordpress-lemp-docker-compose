@@ -1,8 +1,8 @@
 vcl 4.1;
 
 backend default {
-       .host = nginx;
-       .port = 80;
+       .host = "nginx";
+       .port = "80";
 }
 
 #unsetting wordpress cookies
