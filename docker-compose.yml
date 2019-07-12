@@ -23,7 +23,7 @@ services:
     #  - "80:80"
     volumes:
       - type: bind
-        source: ./nginx.conf
+        source: ./nginx-ps.conf
         target: /etc/nginx/conf.d/default.conf
       - type: volume
         source: wp-html
