@@ -14,7 +14,7 @@ services:
         source: ./proxy.conf
         target: /etc/nginx/conf.d/default.conf
       - type: volume
-        source: ssl-certs
+        source: ssl-data
         target: /etc/ssl
   nginx-ps:
     image: pagespeed/nginx-pagespeed:stable
@@ -67,19 +67,10 @@ services:
     image: redis:alpine
     container_name: redis
     restart: "no"
-  cert-gen:
-    image: alpine:latest
-    container_name: cert-gen
-    restart: "no"
-    entrypoint: ["apk", "add", "certbot", "&&", "/bin/ash"]
-    volumes:
-      - type: volume
-        source: ssl-certs
-        target: /etc/ssl/certs
 volumes:
   wp-html:
   nginx-config:
   php-fpm-config:
   mariadb-data:
-  ssl-certs:
+  ssl-data:
   
