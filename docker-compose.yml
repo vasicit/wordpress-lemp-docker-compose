@@ -75,7 +75,7 @@ volumes:
   ssl-data:
 
   # To get self-signed certficicates run following commands:
-  # docker run -it --rm -v ssl-data:/etc/ssl alpine ash
+  # docker run -it --rm --mount source=ssl-data, target=/etc/ssl alpine ash
   # then in the interactive shell run:
   # apk add openssl && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx.key -out /etc/ssl/certs/nginx.crt
   
