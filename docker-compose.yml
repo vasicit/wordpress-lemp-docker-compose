@@ -71,7 +71,7 @@ services:
     image: alpine:latest
     container_name: cert-gen
     restart: "no"
-    entrypoint: ["apk", "add", "openssl", "&&", "tail", "-f", "/dev/null"]
+    entrypoint: ["apk", "add", "certbot", "&&", "tail", "-f", "/dev/null"]
     volumes:
       - type: volume
         source: ssl-certs
