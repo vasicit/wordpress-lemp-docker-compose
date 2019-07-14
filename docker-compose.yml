@@ -67,6 +67,16 @@ services:
     image: redis:alpine
     container_name: redis
     restart: "no"
+  ssl-gen:
+    image: alpine
+    container_name: ssl-gen
+    restart: "no"
+    volumes:
+      - type: bind
+        source: ./ssl
+        target: /etc/ssl
+    entrypoint: ["tail", "-f", "/dev/null"]
+
 volumes:
   wp-html:
   nginx-config:
