@@ -13,9 +13,9 @@ services:
       - type: bind
         source: ./proxy.conf
         target: /etc/nginx/conf.d/default.conf
-      - type: bind
-        source: ./ssl-creds
-        target: /etc/ssl-creds
+      - type: volume
+        source: ssl
+        target: /etc/ssl
   nginx-ps:
     image: pagespeed/nginx-pagespeed:stable
     container_name: nginx-ps
@@ -82,9 +82,10 @@ volumes:
   nginx-config:
   php-fpm-config:
   mariadb-data:
+  ssl:
 
   # To get self-signed certficicates run following commands:
-  # docker exec -it ssl-gen ash
+  # docker-compose run nginx-http2 ash
   # then in the interactive shell run:
-  # apk add openssl && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /tmp/nginx.key -out /tmp/nginx.crt
+  # apk add certbot && certbot --standalone -d abc.com
   
