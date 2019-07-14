@@ -14,7 +14,7 @@ services:
         source: ./proxy.conf
         target: /etc/nginx/conf.d/default.conf
       - type: volume
-        source: letsencrypt
+        source: .letsencrypt
         target: /etc/letsencrypt
       - type: volume
         source: ssl
@@ -88,8 +88,5 @@ volumes:
   letsencrypt:
   ssl:
 
-  # To get self-signed certficicates run following commands:
-  # docker-compose run nginx-http2 ash
-  # then in the interactive shell run:
-  # apk add certbot && certbot certonly --standalone -d abc.com
+  # docker run -it -p 80:80 -v /home/vladimirvasic20/wordpress-lemp-docker-compose/letsencrypt:/etc/letsencrypt certbot/certbot certonly --standalone
   
