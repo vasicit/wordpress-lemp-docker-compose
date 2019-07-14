@@ -74,7 +74,7 @@ services:
     volumes:
       - type: bind
         source: ./ssl-creds
-        target: /etc/ssl-creds
+        target: /tmp
     entrypoint: ["tail", "-f", "/dev/null"]
 
 volumes:
@@ -86,5 +86,5 @@ volumes:
   # To get self-signed certficicates run following commands:
   # docker exec -it ssl-gen ash
   # then in the interactive shell run:
-  # apk add openssl && mkdir -p /etc/ssl-creds && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl-creds/nginx.key -out /etc/ssl-creds/nginx.crt
+  # apk add openssl && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /tmp/nginx.key -out /tmp/nginx.crt
   
