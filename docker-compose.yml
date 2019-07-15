@@ -38,6 +38,10 @@ services:
       - type: volume
         source: wp-html
         target: /usr/share/nginx/html
+      - type: tmpfs
+        source: ps-cache
+        target: /var/cache/ngx_pagespeed
+
   mariadb:
     image: mariadb
     container_name: mariadb
@@ -77,6 +81,7 @@ services:
 volumes:
   wp-html:
   nginx-config:
+  ps-cache:
   php-fpm-config:
   mariadb-data:
   letsencrypt:
