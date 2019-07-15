@@ -85,5 +85,5 @@ volumes:
   letsencrypt:
   ssl:
 
-  # docker run -it -p 80:80 -v /home/vladimirvasic20/wordpress-lemp-docker-compose/letsencrypt:/etc/letsencrypt certbot/certbot certonly --standalone
+  # docker run -it -p 80:80 -v $(pwd)/letsencrypt:/etc/letsencrypt certbot/certbot certonly --standalone
   
