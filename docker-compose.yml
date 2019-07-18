@@ -35,6 +35,9 @@ services:
       - type: bind
         source: ./letsencrypt
         target: /etc/letsencrypt
+      - type: bind
+        source: ./uploads.ini
+        target: /usr/local/etc/php/conf.d/uploads.ini
       - type: volume
         source: wp-html
         target: /usr/share/nginx/html
