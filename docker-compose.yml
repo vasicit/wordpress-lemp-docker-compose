@@ -35,9 +35,6 @@ services:
       - type: bind
         source: ./letsencrypt
         target: /etc/letsencrypt
-      - type: bind
-        source: ./php.ini
-        target: /usr/local/etc/php/php.ini
       - type: volume
         source: wp-html
         target: /usr/share/nginx/html
@@ -64,9 +61,12 @@ services:
     depends_on: 
       - mariadb
     volumes: 
-      - type: volume
-        source: php-fpm-config
-        target: /usr/local/etc/php-fpm.d
+      - type: bind
+        source: ./php.ini
+        target: /usr/local/etc/php/php.ini
+      # - type: volume
+      #   source: php-fpm-config
+      #   target: /usr/local/etc/php
       - type: volume
         source: wp-html
         target: /var/www/html
