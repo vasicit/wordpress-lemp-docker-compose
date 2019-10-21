@@ -1,0 +1,12 @@
+[Unit]
+Description=StartContainer
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+WorkingDirectory=/home/core/wordpress-lemp-docker-compose
+ExecStart=/opt/bin/docker-compose up -d
+
+[Install]
+WantedBy=multi-user.target
