@@ -50,10 +50,10 @@ services:
         source: mariadb-data
         target: /var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: "mdb#dpthchrg!"
+      MYSQL_ROOT_PASSWORD: ":*fV%v#58?;jCQ&p"
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
-      MYSQL_PASSWORD: "wp#dpthchrg!"
+      MYSQL_PASSWORD: "25V%{NQ!ed:$&9h:"
   wordpress:
     image: wordpress:fpm-alpine
     container_name: wordpress
@@ -73,7 +73,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: mariadb
       WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: "wp#dpthchrg!"
+      WORDPRESS_DB_PASSWORD: "kZ}<3}Z.A^Kjb+y%"
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DEBUG: "1"
   redis:
