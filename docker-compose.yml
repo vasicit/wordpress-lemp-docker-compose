@@ -53,7 +53,7 @@ services:
       MYSQL_ROOT_PASSWORD: ":*fV%v#58?;jCQ&p"
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
-      MYSQL_PASSWORD: "25V%{NQ!ed#6&9h#"
+      MYSQL_PASSWORD: "kZ}<3}Z.A^Kjb+y%"
   wordpress:
     image: wordpress:fpm-alpine
     container_name: wordpress
