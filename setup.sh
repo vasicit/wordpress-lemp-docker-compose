@@ -2,6 +2,7 @@
 
 echo "Setting up Docker Compose"
 
+sudo mkdir -p /opt/bin
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /opt/bin/docker-compose
 sudo chmod +x /opt/bin/docker-compose
 
@@ -10,7 +11,7 @@ read -p 'Domain name: ' domainvar
 echo "Please type the email address for renewal notices:"
 read -p 'Email address: ' emailvar
 echo "Setting up domain name in nginx.conf.."
-sed -i "s/[DOMAIN_NAME]/$domainvar/g" nginx.conf
+sed -i "s/DOMAINNAME/$domainvar/g" nginx.conf
 
 echo "Installing temporary SSL certificates with LetsEncrypt"
 
