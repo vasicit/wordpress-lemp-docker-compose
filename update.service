@@ -1,5 +1,5 @@
 [Unit]
-Description=Prints date into /tmp/date file
+Description=Updates all container images and restarts all once a day.
 
 [Service]
 Type=oneshot
