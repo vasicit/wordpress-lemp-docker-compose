@@ -1,4 +1,4 @@
-Unit]
+[Unit]
 Description=Run date.service every 10 minutes
 
 [Timer]
