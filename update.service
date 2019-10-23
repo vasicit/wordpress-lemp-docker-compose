@@ -1,0 +1,7 @@
+[Unit]
+Description=Prints date into /tmp/date file
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/core/wordpress-lemp-docker-compose
+ExecStart=/usr/bin/sh -c 'docker-compose pull && docker-compose restart'
