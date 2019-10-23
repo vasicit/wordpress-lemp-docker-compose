@@ -1,0 +1,2 @@
+docker run -it -p 80:80 -v $(pwd)/letsencrypt:/etc/letsencrypt certbot/certbot 
+
