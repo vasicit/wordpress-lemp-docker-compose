@@ -21,5 +21,5 @@ echo "Setting up container auto-start service at boot time and daily update time
 
 cp *.service /etc/systemd/system/
 cp *.timer /etc/systemd/system/
-sudo systemctl enable /etc/systemd/system/start-container.service --now
-sudo systemctl start update.timer
+systemctl enable /etc/systemd/system/start-container.service --now
+systemctl start update.timer
