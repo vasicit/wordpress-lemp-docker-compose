@@ -2,9 +2,8 @@
 
 echo "Setting up Docker Compose"
 
-mkdir -p /opt/bin
-curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /opt/bin/docker-compose
-chmod +x /opt/bin/docker-compose
+curl -L --fail https://github.com/docker/compose/releases/download/1.29.2/run.sh -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
 echo "Please type the domain name without the https:// prefix:"
 read -p 'Domain name: ' domainvar
